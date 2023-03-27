@@ -4,10 +4,13 @@
 
 void printarLista(int lista[], int tam_lista)
 {
+    printf("\nLISTA!\n");
+
     for (int i = 0; i < tam_lista; i++)
     {
         printf("%i\n", lista[i]);
     }
+    printf("FIM DA LISTA\n");
 }
 void comb(int lista[], int inicio, int meio, int fim)
 {
@@ -57,6 +60,7 @@ void comb(int lista[], int inicio, int meio, int fim)
 
 void merge(int lista[], int inicio, int fim, int tam_lista)
 {
+    printarLista(lista, tam_lista);
     if ((fim - inicio) > 0)
     {
         int meio = (fim + inicio) / 2;
@@ -68,7 +72,7 @@ void merge(int lista[], int inicio, int fim, int tam_lista)
 
 int main(int argc, char *argv[])
 {
-    int listaPequena[] = {6, 1, 7, 5, 6, 7, 4, 10, 1, 6};
+    int listaPequena[] = {6, 1, 7, 5, 6, 7, 4, 10, 1, 6, 3};
     int listaMedia[] = {847, 576, 227, 216, 966, 312, 454, 114, 510, 218, 349, 525, 960, 392, 848, 406, 79, 422, 74, 337, 585, 152, 261, 225, 229, 392, 282, 12, 412, 539, 757, 378, 832, 68, 800, 455, 929, 753, 604, 579, 185, 745, 285, 158, 850, 913, 320, 920, 163, 229, 34, 934, 741, 216, 570, 266, 564, 6, 46, 427, 435, 191, 752, 324, 45, 634, 507, 211, 935, 344, 676, 69, 164, 410, 971, 357, 903, 975, 608, 716, 421, 14, 86, 195, 37, 814, 192, 155, 101, 358, 677, 539, 693, 626, 863, 505, 936, 840, 110, 375};
     int listaGrande[] = {3139,
                          5339,
@@ -1079,9 +1083,8 @@ int main(int argc, char *argv[])
     fim = clock();
 
     printf("Tempo: %fs\n", ((double)(fim - inicio) / CLOCKS_PER_SEC));
-    merge(listaMedia, 0, (sizeof(listaMedia) / sizeof(int)) - 1, (sizeof(listaMedia) / sizeof(int)));
-
-    merge(listaGrande, 0, (sizeof(listaGrande) / sizeof(int)) - 1, (sizeof(listaGrande) / sizeof(int)));
+    // merge(listaMedia, 0, (sizeof(listaMedia) / sizeof(int)) - 1, (sizeof(listaMedia) / sizeof(int)));
+    // merge(listaGrande, 0, (sizeof(listaGrande) / sizeof(int)) - 1, (sizeof(listaGrande) / sizeof(int)));
 
     return 0;
 }
